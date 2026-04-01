@@ -1,0 +1,31 @@
+# OS / system
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Build / cache
+dist/
+build/
+.cache/
+
+# Env files
+.env
+.env.*
+
+# Optional local-only files
+*.tmp
+*.bak
+
+# Windows shortcuts
+*.lnk

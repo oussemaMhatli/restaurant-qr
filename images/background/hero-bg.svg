@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#2d4a2d"/>
+      <stop offset="60%" stop-color="#1a3320"/>
+      <stop offset="100%" stop-color="#0d1f0d"/>
+    </radialGradient>
+    <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="blur12"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="blur20"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="blur35"><feGaussianBlur stdDeviation="35"/></filter>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1440" height="900" fill="url(#bg)"/>
+
+  <!-- Large soft bokeh - background layer -->
+  <circle cx="900" cy="600" r="120" fill="#e8a020" opacity="0.18" filter="url(#blur35)"/>
+  <circle cx="1100" cy="700" r="90" fill="#c85020" opacity="0.15" filter="url(#blur35)"/>
+  <circle cx="700" cy="750" r="100" fill="#f0c040" opacity="0.12" filter="url(#blur35)"/>
+  <circle cx="1300" cy="500" r="80" fill="#d06010" opacity="0.14" filter="url(#blur35)"/>
+  <circle cx="400" cy="650" r="110" fill="#a0c840" opacity="0.10" filter="url(#blur35)"/>
+  <circle cx="200" cy="800" r="70" fill="#e8a020" opacity="0.12" filter="url(#blur35)"/>
+  <circle cx="600" cy="820" r="85" fill="#c03010" opacity="0.10" filter="url(#blur35)"/>
+  <circle cx="1200" cy="350" r="95" fill="#f0b030" opacity="0.13" filter="url(#blur35)"/>
+  <circle cx="50" cy="500" r="75" fill="#80b040" opacity="0.08" filter="url(#blur35)"/>
+  <circle cx="1380" cy="800" r="60" fill="#e86020" opacity="0.11" filter="url(#blur35)"/>
+
+  <!-- Medium bokeh -->
+  <circle cx="850" cy="550" r="55" fill="#f5c842" opacity="0.25" filter="url(#blur20)"/>
+  <circle cx="1050" cy="680" r="45" fill="#e85020" opacity="0.22" filter="url(#blur20)"/>
+  <circle cx="650" cy="700" r="50" fill="#ffd060" opacity="0.20" filter="url(#blur20)"/>
+  <circle cx="1250" cy="450" r="40" fill="#d07020" opacity="0.24" filter="url(#blur20)"/>
+  <circle cx="350" cy="600" r="60" fill="#90cc30" opacity="0.16" filter="url(#blur20)"/>
+  <circle cx="150" cy="750" r="35" fill="#f0a030" opacity="0.20" filter="url(#blur20)"/>
+  <circle cx="500" cy="780" r="45" fill="#cc3015" opacity="0.18" filter="url(#blur20)"/>
+  <circle cx="1150" cy="300" r="50" fill="#e8b040" opacity="0.22" filter="url(#blur20)"/>
+  <circle cx="950" cy="800" r="40" fill="#ff8020" opacity="0.19" filter="url(#blur20)"/>
+  <circle cx="1350" cy="650" r="35" fill="#ffd040" opacity="0.21" filter="url(#blur20)"/>
+  <circle cx="750" cy="480" r="42" fill="#e06030" opacity="0.17" filter="url(#blur20)"/>
+  <circle cx="1400" cy="200" r="55" fill="#80c030" opacity="0.12" filter="url(#blur20)"/>
+  <circle cx="100" cy="350" r="48" fill="#f0a020" opacity="0.14" filter="url(#blur20)"/>
+
+  <!-- Small sharper bokeh circles -->
+  <circle cx="820" cy="520" r="22" fill="#ffd060" opacity="0.55" filter="url(#blur12)"/>
+  <circle cx="1020" cy="640" r="18" fill="#ff6030" opacity="0.50" filter="url(#blur12)"/>
+  <circle cx="620" cy="670" r="20" fill="#ffe080" opacity="0.48" filter="url(#blur12)"/>
+  <circle cx="1220" cy="420" r="16" fill="#ffc040" opacity="0.52" filter="url(#blur12)"/>
+  <circle cx="320" cy="570" r="24" fill="#c0e060" opacity="0.38" filter="url(#blur12)"/>
+  <circle cx="480" cy="750" r="18" fill="#ff5020" opacity="0.42" filter="url(#blur12)"/>
+  <circle cx="1120" cy="270" r="22" fill="#ffcc40" opacity="0.50" filter="url(#blur12)"/>
+  <circle cx="920" cy="770" r="17" fill="#ff9030" opacity="0.46" filter="url(#blur12)"/>
+  <circle cx="1320" cy="620" r="14" fill="#ffe040" opacity="0.54" filter="url(#blur12)"/>
+  <circle cx="720" cy="450" r="19" fill="#ff7030" opacity="0.44" filter="url(#blur12)"/>
+  <circle cx="180" cy="420" r="21" fill="#ffc060" opacity="0.36" filter="url(#blur12)"/>
+  <circle cx="1380" cy="140" r="16" fill="#90d040" opacity="0.34" filter="url(#blur12)"/>
+  <circle cx="560" cy="430" r="14" fill="#ffb030" opacity="0.40" filter="url(#blur12)"/>
+  <circle cx="1170" cy="760" r="20" fill="#ff6020" opacity="0.43" filter="url(#blur12)"/>
+  <circle cx="70" cy="620" r="17" fill="#ffd050" opacity="0.38" filter="url(#blur12)"/>
+  <circle cx="440" cy="500" r="13" fill="#e8c030" opacity="0.42" filter="url(#blur12)"/>
+  <circle cx="990" cy="390" r="18" fill="#ff8040" opacity="0.39" filter="url(#blur12)"/>
+  <circle cx="260" cy="680" r="15" fill="#ffa030" opacity="0.41" filter="url(#blur12)"/>
+
+  <!-- Tiny bright bokeh dots -->
+  <circle cx="800" cy="500" r="8" fill="#ffe090" opacity="0.80" filter="url(#blur6)"/>
+  <circle cx="1000" cy="620" r="7" fill="#ff8050" opacity="0.75" filter="url(#blur6)"/>
+  <circle cx="600" cy="640" r="9" fill="#ffee90" opacity="0.72" filter="url(#blur6)"/>
+  <circle cx="1200" cy="400" r="6" fill="#ffcc50" opacity="0.78" filter="url(#blur6)"/>
+  <circle cx="400" cy="550" r="8" fill="#d0f060" opacity="0.60" filter="url(#blur6)"/>
+  <circle cx="460" cy="730" r="7" fill="#ff6030" opacity="0.68" filter="url(#blur6)"/>
+  <circle cx="1100" cy="250" r="8" fill="#ffd050" opacity="0.74" filter="url(#blur6)"/>
+  <circle cx="900" cy="750" r="6" fill="#ff9040" opacity="0.70" filter="url(#blur6)"/>
+  <circle cx="1300" cy="600" r="7" fill="#ffee60" opacity="0.76" filter="url(#blur6)"/>
+  <circle cx="700" cy="430" r="8" fill="#ff7040" opacity="0.66" filter="url(#blur6)"/>
+  <circle cx="160" cy="400" r="6" fill="#ffcc60" opacity="0.58" filter="url(#blur6)"/>
+  <circle cx="1360" cy="120" r="7" fill="#a0e050" opacity="0.55" filter="url(#blur6)"/>
+  <circle cx="540" cy="410" r="5" fill="#ffb040" opacity="0.64" filter="url(#blur6)"/>
+  <circle cx="1150" cy="740" r="7" fill="#ff6030" opacity="0.67" filter="url(#blur6)"/>
+  <circle cx="60" cy="600" r="6" fill="#ffd060" opacity="0.60" filter="url(#blur6)"/>
+  <circle cx="240" cy="660" r="5" fill="#ffa040" opacity="0.63" filter="url(#blur6)"/>
+  <circle cx="970" cy="370" r="7" fill="#ff8050" opacity="0.62" filter="url(#blur6)"/>
+  <circle cx="340" cy="480" r="6" fill="#ffe070" opacity="0.65" filter="url(#blur6)"/>
+  <circle cx="1270" cy="730" r="5" fill="#ffcc40" opacity="0.69" filter="url(#blur6)"/>
+  <circle cx="860" cy="310" r="6" fill="#ff9030" opacity="0.57" filter="url(#blur6)"/>
+
+  <!-- Dark overlay top for text readability -->
+  <rect width="1440" height="900" fill="url(#topOverlay)" opacity="1"/>
+  <defs>
+    <linearGradient id="topOverlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1f0d" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#1a3320" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#0d1f0d" stop-opacity="0.40"/>
+    </linearGradient>
+  </defs>
+</svg>

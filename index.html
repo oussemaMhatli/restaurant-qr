@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PALAIS SOLID — Restaurant & Café</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="index.css"/>
+
+
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       NAVBAR
+  ══════════════════════════════ -->
+  <nav class="foody-nav navbar navbar-expand-lg">
+    <div class="container">
+      <a class="nav-brand me-4" href="#">
+        <div class="nav-brand-pill">
+          <span class="nav-logo-dot">🍴</span>
+          <span class="nav-brand-text">Palais Solid</span>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#foodyNav" style="color:#fff;">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="foodyNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">À Propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      <div class="nav-icons mt-2 mt-lg-0">
+  <a href="tel:90712800" class="nav-icon-btn" aria-label="Appeler">
+    <i class="bi bi-telephone-fill"></i>
+  </a>
+</div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════
+       HERO SECTION
+  ══════════════════════════════ -->
+  <section class="hero-section" id="accueil">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 hero-content">
+          <div class="hero-social-links fade-up">
+            <a href="https://facebook.com" target="_blank" class="hero-social-link" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="hero-social-link" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="hero-social-link" aria-label="TikTok">
+              <i class="bi bi-tiktok"></i>
+            </a>
+          </div>
+          <h1 class="hero-title fade-up">Palais Solid — Restaurant & Café</h1>
+          <p class="hero-desc fade-up stagger-1">
+            Découvrez notre cuisine authentique et nos saveurs exceptionnelles dans une ambiance chaleureuse et conviviale.
+          </p>
+          <div class="d-flex flex-wrap gap-3 fade-up stagger-2">
+            <a href="#menu" class="btn-gold"><i class="bi bi-book me-1"></i> Menu</a>
+            <a href="tel:90712800" class="btn-gold-outline"><i class="bi bi-calendar-check me-1"></i> Réserver Table</a>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-food-img text-center fade-up stagger-2">
+          <img src="images/food/hero-bowl.png" alt="Delicious Food Bowl" onerror="this.style.display='none'"/>
+          <svg id="hero-placeholder" viewBox="0 0 360 360" width="360" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 20px 50px rgba(0,0,0,0.5));max-width:100%;">
+            <circle cx="180" cy="180" r="160" fill="#8b5e3c" opacity="0.9"/>
+            <ellipse cx="180" cy="195" rx="130" ry="110" fill="#c8a96e"/>
+            <circle cx="180" cy="185" r="100" fill="#e8c47a"/>
+            <ellipse cx="145" cy="120" rx="55" ry="50" fill="#f0c040" opacity="0.95"/>
+            <ellipse cx="145" cy="115" rx="50" ry="45" fill="#f5d060"/>
+            <ellipse cx="215" cy="105" rx="45" ry="42" fill="#eebb38" opacity="0.9"/>
+            <circle cx="200" cy="175" r="6" fill="#c87030"/><circle cx="215" cy="165" r="5" fill="#c87030"/>
+            <circle cx="225" cy="178" r="6" fill="#b86020"/><circle cx="210" cy="188" r="5" fill="#c87030"/>
+            <circle cx="198" cy="195" r="6" fill="#b86020"/><circle cx="220" cy="195" r="5" fill="#c87030"/>
+            <ellipse cx="160" cy="195" rx="18" ry="7" fill="#5a9a30" transform="rotate(-20 160 195)"/>
+            <ellipse cx="148" cy="205" rx="16" ry="6" fill="#6ab030" transform="rotate(15 148 205)"/>
+            <circle cx="155" cy="175" r="14" fill="#e03020" opacity="0.8"/>
+            <ellipse cx="175" cy="215" rx="14" ry="10" fill="#e8e020" opacity="0.9"/>
+            <ellipse cx="185" cy="210" rx="12" ry="8" fill="#cc6688" opacity="0.7"/>
+            <circle cx="230" cy="215" r="20" fill="#f8f8f0"/>
+            <circle cx="230" cy="215" r="14" fill="#e0dcc8" opacity="0.7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════
+       MENU
+  ══════════════════════════════ -->
+  <section class="daily-section" id="menu">
+    <div class="container">
+    <h2 class="section-title text-center fade-up">Notre Menu</h2>
+
+      <div class="menu-categories mb-5 fade-up">
+        <div class="row justify-content-center g-2 g-md-3">
+          <div class="col-6 col-md-4 col-lg-3">
+            <button class="menu-category-btn active w-100" data-category="pizza">Pizza</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <button class="menu-category-btn w-100" data-category="plats">Plats</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <button class="menu-category-btn w-100" data-category="grillades">Grillades</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <button class="menu-category-btn w-100" data-category="salades">Salades</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <button class="menu-category-btn w-100" data-category="hamburger">Hamburger</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <button class="menu-category-btn w-100" data-category="cafe">Café</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+            <button class="menu-category-btn w-100" data-category="boisson">Boisson</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-items">
+
+        <!-- ═══ PIZZA ═══ -->
+        <div class="menu-category active" id="pizza">
+          <div class="row justify-content-center g-4">
+
+            <!-- Margherita -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/pizza-margherita.jfif" alt="Margherita"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FF6347%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Margherita</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Sauce tomate</span>
+                    <span class="food-card-ingredient">Mozzarella</span>
+                    <span class="food-card-ingredient">Basilic</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">10.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Neptune -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/neptune.jfif" alt="Neptune"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%234169E1%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Neptune</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Thon</span>
+                    <span class="food-card-ingredient">Sauce tomate</span>
+                    <span class="food-card-ingredient">Mozzarella</span>
+                    <span class="food-card-ingredient">Olive</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">12.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pepperone -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-3">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/pizza-pepperone.png" alt="Pepperone"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FF6347%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Pepperone</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Sauce tomate</span>
+                    <span class="food-card-ingredient">Mozzarella</span>
+                    <span class="food-card-ingredient">Pepperoni</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">14.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mexicaine -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/pizza-mexicaine.png" alt="Mexicaine"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FFA500%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Mexicaine</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Sauce tomate</span>
+                    <span class="food-card-ingredient">Mozzarella</span>
+                    <span class="food-card-ingredient">Escalope</span>
+                    <span class="food-card-ingredient">Oignon</span>
+                    <span class="food-card-ingredient">Tomate</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">15.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reine -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/pizza-reine.png" alt="Reine"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FFC0CB%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Reine</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Crème fraîche</span>
+                    <span class="food-card-ingredient">Mozzarella</span>
+                    <span class="food-card-ingredient">Jambon</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">11.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4 Fromage -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-3">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/pizza-4fromage.png" alt="4 Fromage"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FFD700%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">4 Fromage</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Crème fraîche</span>
+                    <span class="food-card-ingredient">Mozzarella</span>
+                    <span class="food-card-ingredient">Gruyère</span>
+                    <span class="food-card-ingredient">Emmental</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">18.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Turc -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/pizza-turc.png" alt="Turc"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%238B4513%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Turc</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Sauce tomate</span>
+                    <span class="food-card-ingredient">Mozzarella</span>
+                    <span class="food-card-ingredient">Champignon</span>
+                    <span class="food-card-ingredient">Jambon</span>
+                    <span class="food-card-ingredient">Escalope</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">20.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ═══ NOS PLATS ═══ -->
+        <div class="menu-category" id="plats">
+          <div class="row justify-content-center g-4">
+
+            <!-- Spaghetti Fruits de Mer -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/spaghetti-fruits-mer.png" alt="Spaghetti Fruits de Mer"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FF6347%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Spaghetti Fruits de Mer</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Spaghetti</span>
+                    <span class="food-card-ingredient">Crevettes</span>
+                    <span class="food-card-ingredient">Calamars</span>
+                    <span class="food-card-ingredient">Sauce tomate</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">20.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Penne Sauce Blanche -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/penne-sauce-blanche.png" alt="Penne Sauce Blanche"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FFC0CB%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Penne Sauce Blanche</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Penne</span>
+                    <span class="food-card-ingredient">Crème fraîche</span>
+                    <span class="food-card-ingredient">Parmesan</span>
+                    <span class="food-card-ingredient">Ail</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">12.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spaghetti Bolognaise -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-3">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/spaghetti-bolognaise.png" alt="Spaghetti Bolognaise"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%238B4513%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Spaghetti Bolognaise</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Spaghetti</span>
+                    <span class="food-card-ingredient">Viande hachée</span>
+                    <span class="food-card-ingredient">Sauce tomate</span>
+                    <span class="food-card-ingredient">Herbes</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">13.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lasagnes -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/lasagnes-viande.png" alt="Lasagnes Viande Hachée"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%238B4513%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Lasagnes Viande Hachée</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Pâtes lasagne</span>
+                    <span class="food-card-ingredient">Viande hachée</span>
+                    <span class="food-card-ingredient">Béchamel</span>
+                    <span class="food-card-ingredient">Fromage</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">17.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Plat Kaftaji -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/kaftaji.png" alt="Plat Kaftaji"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FFA500%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Plat Kaftaji</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Courgette frite</span>
+                    <span class="food-card-ingredient">Poivron</span>
+                    <span class="food-card-ingredient">Pomme de terre</span>
+                    <span class="food-card-ingredient">Œuf</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">7.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ═══ GRILLADES ═══ -->
+        <div class="menu-category" id="grillades">
+          <div class="row justify-content-center g-4">
+
+            <!-- Brochette Escalope -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/brochette-escalope.png" alt="Brochette Escalope"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%238B4513%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Brochette Escalope</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Escalope poulet</span>
+                    <span class="food-card-ingredient">Oignon</span>
+                    <span class="food-card-ingredient">Poivron</span>
+                    <span class="food-card-ingredient">Épices</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">13.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brochette Agneau -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/brochette-agneau.png" alt="Brochette d'Agneau"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23654321%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Brochette d'Agneau</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Agneau</span>
+                    <span class="food-card-ingredient">Cumin</span>
+                    <span class="food-card-ingredient">Coriandre</span>
+                    <span class="food-card-ingredient">Harissa</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">18.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Poisson du Jour -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-3">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/poisson-jour.png" alt="Poisson du Jour"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%234169E1%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Poisson du Jour</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Poisson frais</span>
+                    <span class="food-card-ingredient">Citron</span>
+                    <span class="food-card-ingredient">Herbes</span>
+                    <span class="food-card-ingredient">Huile d'olive</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">15.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Escalope Grillé -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/escalope-grille.png" alt="Escalope Grillé"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FFD700%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Escalope Grillé</div>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Escalope poulet</span>
+                    <span class="food-card-ingredient">Citron</span>
+                    <span class="food-card-ingredient">Ail</span>
+                    <span class="food-card-ingredient">Romarin</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">10.000 TND</span>
+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cordon Bleu -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/cordon-bleu.png" alt="Cordon Bleu"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FFD700%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Cordon Bleu</div>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Escalope</span>
+                    <span class="food-card-ingredient">Jambon</span>
+                    <span class="food-card-ingredient">Fromage</span>
+                    <span class="food-card-ingredient">Chapelure</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">10.000 TND</span>
+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Escalope Pannée -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-3">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/escalope-pannee.png" alt="Escalope Pannée"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FFA500%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Escalope Pannée</div>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Escalope</span>
+                    <span class="food-card-ingredient">Chapelure</span>
+                    <span class="food-card-ingredient">Œuf</span>
+                    <span class="food-card-ingredient">Épices</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">10.000 TND</span>
+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Crevette Grillé -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/crevette-grille.png" alt="Crevette Grillé"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FF6347%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Crevette Grillé (4pcs)</div>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Crevettes</span>
+                    <span class="food-card-ingredient">Ail</span>
+                    <span class="food-card-ingredient">Citron</span>
+                    <span class="food-card-ingredient">Persil</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">18.000 TND</span>
+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ═══ SALADES ═══ -->
+        <div class="menu-category" id="salades">
+          <div class="row justify-content-center g-4">
+
+            <!-- Cézar -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/salade-cezar.png" alt="Cézar"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23228B22%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Cézar</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Laitue</span>
+                    <span class="food-card-ingredient">Parmesan</span>
+                    <span class="food-card-ingredient">Croûtons</span>
+                    <span class="food-card-ingredient">Sauce César</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">8.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tunisienne -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/salade-tunisienne.png" alt="Tunisienne"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23228B22%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Tunisienne</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Tomate</span>
+                    <span class="food-card-ingredient">Concombre</span>
+                    <span class="food-card-ingredient">Olive</span>
+                    <span class="food-card-ingredient">Thon</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">5.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Michouia -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-3">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/salade-michouia.png" alt="Michouia"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FF6347%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Michouia</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Poivron grillé</span>
+                    <span class="food-card-ingredient">Tomate</span>
+                    <span class="food-card-ingredient">Ail</span>
+                    <span class="food-card-ingredient">Huile d'olive</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">5.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Palais -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/salade-palais.png" alt="Palais"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23228B22%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Palais</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Laitue</span>
+                    <span class="food-card-ingredient">Crevettes</span>
+                    <span class="food-card-ingredient">Avocat</span>
+                    <span class="food-card-ingredient">Sauce maison</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">10.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ═══ HAMBURGER ═══ -->
+        <div class="menu-category" id="hamburger">
+          <div class="row justify-content-center g-4">
+
+            <!-- Hamburger Simple -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/hamburger-simple.png" alt="Hamburger Simple"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%238B4513%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Hamburger Simple</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Steak haché</span>
+                    <span class="food-card-ingredient">Salade</span>
+                    <span class="food-card-ingredient">Tomate</span>
+                    <span class="food-card-ingredient">Ketchup</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">7.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hamburger Double -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/hamburger-double.png" alt="Hamburger Double"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23f0ece2%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%238B4513%22 opacity=%220.7%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Hamburger Double</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Double steak</span>
+                    <span class="food-card-ingredient">Fromage fondu</span>
+                    <span class="food-card-ingredient">Oignon caramélisé</span>
+                    <span class="food-card-ingredient">Sauce BBQ</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">10.000 TND</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ═══ CAFÉ ═══ -->
+        <div class="menu-category" id="cafe">
+          <div class="row justify-content-center g-4">
+
+            <!-- Express -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/cafe-express.png" alt="Express"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%238B4513%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23D2691%22 opacity=%220.8%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Express</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Café moulu</span>
+                    <span class="food-card-ingredient">Eau chaude</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">3.500 TND</span>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Turc -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/cafe-turc.png" alt="Turc"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%238B4513%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23654321%22 opacity=%220.8%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Turc</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Café turc</span>
+                    <span class="food-card-ingredient">Cardamome</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">4.000 TND</span>
+                  </div>
+                </div>
+              </div>
+
+            <!-- American -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-3">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/cafe-american.png" alt="American"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%238B4513%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%234169E1%22 opacity=%220.8%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">American</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Café filtre</span>
+                    <span class="food-card-ingredient">Lait</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">5.000 TND</span>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Jus Fruits -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/jus-fruits.png" alt="Jus Fruits"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23FFA500%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FF6347%22 opacity=%220.8%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Jus Fruits</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Oranges</span>
+                    <span class="food-card-ingredient">Pommes</span>
+                    <span class="food-card-ingredient">Carottes</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">6.000 TND</span>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Eau 1L -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-2">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/eau-1l.png" alt="Eau 1L"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%234169E1%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%2300CED1%22 opacity=%220.8%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Eau 1L</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Eau minérale</span>
+                    <span class="food-card-ingredient">Gaz</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">1.500 TND</span>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Eau 0.5L -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-3">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/eau-05l.png" alt="Eau 0.5L"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%234169E1%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%2300CED1%22 opacity=%220.8%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Eau 0.5L</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Eau minérale</span>
+                    <span class="food-card-ingredient">Gaz</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">0.800 TND</span>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Canette -->
+            <div class="col-lg-4 col-md-6 fade-up stagger-1">
+              <div class="food-card">
+                <div class="food-card-img-wrap">
+                  <img src="images/food/canette.png" alt="Canette"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23FF0000%22/%3E%3Ccircle cx=%22200%22 cy=%22100%22 r=%2275%22 fill=%22%23FF0000%22 opacity=%220.8%22/%3E%3C/svg%3E'"/>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-name">Canette</div>
+                  <button class="btn-ingredients" onclick="toggleIngredients(this)">
+                    Ingrédients
+                  </button>
+                  <div class="food-card-ingredients">
+                    <span class="food-card-ingredient">Soda</span>
+                    <span class="food-card-ingredient">Sucre</span>
+                  </div>
+                  <div class="food-card-footer">
+                    <span class="food-price">2.000 TND</span>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SERVICES SECTION
+  ══════════════════════════════ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <h2 class="section-title text-center fade-up">Nos Services</h2>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 fade-up stagger-1">
+          <div class="service-item">
+            <div class="service-icon">🏊‍♂️</div>
+            <div class="service-label">Piscine</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Espace détente avec piscine familiale, accessible aux enfants et aux adultes, ouverte de 9h à 17h, 7j/7.
+</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 fade-up stagger-2">
+          <div class="service-item">
+            <div class="service-icon">🍽️</div>
+            <div class="service-label">Cuisine</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Cuisine moderne et entièrement équipée, proposant de délicieux plats et desserts.
+</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 fade-up stagger-3">
+          <div class="service-item">
+            <div class="service-icon">☕</div>
+            <div class="service-label">Café</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">café cosy avec vue piscine, événements, animations musicales et activités pour enfants.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 fade-up stagger-4">
+          <div class="service-item">
+            <div class="service-icon">💍</div>
+            <div class="service-label">Réservation Mariage</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Organisation de mariages, anniversaires, événements privés et professionnels, avec animations et services sur mesure.
+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       ABOUT SECTION
+  ══════════════════════════════ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2 class="section-title text-center fade-up">À Propos de Nous</h2>
+
+      <div class="about-content fade-up">
+        <div class="about-text">
+          <h3>Notre Histoire</h3>
+          <p>Palais Solid est bien plus qu'un restaurant — c'est un lieu de vie où la passion pour la gastronomie se rencontre avec l'hospitalité chaleureuse. Depuis nos débuts, nous nous engageons à offrir une expérience culinaire inoubliable.</p>
+          <p>Chaque plat est préparé avec soin, utilisant les meilleurs ingrédients locaux et internationaux. Notre équipe dévouée travaille chaque jour pour faire de votre visite un moment spécial.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663223429974/4RVDWbdRBLa2ojd7E7maLD/about-ambiance_f548f458.jpg" alt="Ambiance du restaurant" 
+               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23f8f9fa%22/%3E%3Ccircle cx=%22300%22 cy=%22200%22 r=%2280%22 fill=%22%23f5a623%22 opacity=%220.8%22/%3E%3C/svg%3E'">
+        </div>
+      </div>
+
+      <div class="about-content fade-up stagger-1">
+        <div class="about-image">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663223429974/4RVDWbdRBLa2ojd7E7maLD/about-chef_d071ac51.jpg" alt="Notre chef"
+               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23e9ecef%22/%3E%3Ccircle cx=%22300%22 cy=%22200%22 r=%2280%22 fill=%22%236c757d%22 opacity=%220.8%22/%3E%3C/svg%3E'">
+        </div>
+        <div class="about-text">
+          <h3>Notre Chef</h3>
+          <p>Notre chef expérimenté apporte une expertise culinaire reconnue, fusionnant les traditions avec l'innovation. Chaque création culinaire raconte une histoire de passion et de dévouement.</p>
+          <p>Avec plus de 15 ans d'expérience, notre équipe de cuisine crée des plats qui ravissent les papilles et créent des souvenirs durables pour nos clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       CONTACT SECTION
+  ══════════════════════════════ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title text-center fade-up">Nous Contacter</h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 fade-up stagger-1">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+            <h3>Téléphone</h3>
+            <p><a class="contact-phone" href="tel:90712800">90712800</a></p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 fade-up stagger-2">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <h3>Adresse</h3>
+            <p>Tunis, Tunisie</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 fade-up stagger-3">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="bi bi-clock-fill"></i></div>
+            <h3>Horaires</h3>
+            <p>Lun-Dim: 11h-23h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+ 
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="foody-footer">
+    <div class="container">
+      <p> 2025 <strong>Palais Solid</strong> — Restaurant & Café. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
