@@ -33,4 +33,37 @@
       button.innerText = 'Masquer';
     }
   };
+
+  // Gestion du formulaire de réclamation WhatsApp
+  const reclamationForm = document.getElementById('reclamationForm');
+  if (reclamationForm) {
+    reclamationForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nom = document.getElementById('nom').value.trim() || 'Anonyme';
+      const reclamation = document.getElementById('reclamation').value.trim();
+      
+      if (!reclamation) {
+        alert('Veuillez décrire votre réclamation.');
+        return;
+      }
+      
+      // Format de la date actuelle
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('fr-FR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      
+      // Construction du message WhatsApp
+      const message = `Nouvelle réclamation de ${nom} au ${dateStr}\n\nLa réclamation est : ${reclamation}`;
+      
+      // Ouvrir WhatsApp avec le message prérempli
+      const whatsappUrl = `https://wa.me/21690712800?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    });
+  }
 })();

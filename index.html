@@ -1034,27 +1034,48 @@
   <section class="contact-section" id="contact">
     <div class="container">
       <h2 class="section-title text-center fade-up">Nous Contacter</h2>
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6 fade-up stagger-1">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
-            <h3>Téléphone</h3>
-            <p><a class="contact-phone" href="tel:90712800">90712800</a></p>
+      
+      <!-- Formulaire de réclamation -->
+      <div class="row justify-content-center fade-up stagger-1">
+        <div class="col-lg-6 col-md-8">
+          <div class="contact-form-wrapper">
+            <form id="reclamationForm" class="contact-form">
+              <div class="form-group">
+                <label for="nom" class="form-label">Nom (facultatif)</label>
+                <input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom">
+              </div>
+              <div class="form-group">
+                <label for="reclamation" class="form-label">Réclamation <span class="text-danger">*</span></label>
+                <textarea id="reclamation" name="reclamation" class="form-control" rows="4" placeholder="Décrivez votre réclamation..." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-whatsapp"></i> Envoyer via WhatsApp
+              </button>
+            </form>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 fade-up stagger-2">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
-            <h3>Adresse</h3>
-            <p>Tunis, Tunisie</p>
-          </div>
+      </div>
+
+      <!-- Informations de contact et réseaux sociaux -->
+      <div class="contact-info-bar fade-up stagger-2">
+        <div class="contact-info-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>contact@palai-solid.com</span>
         </div>
-        <div class="col-lg-4 col-md-6 fade-up stagger-3">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="bi bi-clock-fill"></i></div>
-            <h3>Horaires</h3>
-            <p>Lun-Dim: 11h-23h</p>
-          </div>
+        <div class="contact-info-item">
+          <i class="bi bi-telephone-fill"></i>
+          <a href="tel:90712800">90712800</a>
+        </div>
+        <div class="contact-social-links">
+          <a href="https://facebook.com" class="contact-social-link" target="_blank" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://instagram.com" class="contact-social-link" target="_blank" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://tiktok.com" class="contact-social-link" target="_blank" aria-label="TikTok">
+            <i class="bi bi-tiktok"></i>
+          </a>
         </div>
       </div>
     </div>
