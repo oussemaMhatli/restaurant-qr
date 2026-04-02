@@ -901,6 +901,7 @@
                   </div>
                 </div>
               </div>
+            </div>
 
             <!-- Eau 0.5L -->
             <div class="col-lg-4 col-md-6 fade-up stagger-3">
@@ -923,6 +924,7 @@
                   </div>
                 </div>
               </div>
+            </div>
 
             <!-- Canette -->
             <div class="col-lg-4 col-md-6 fade-up stagger-1">
@@ -1028,60 +1030,82 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════
-       CONTACT SECTION
-  ══════════════════════════════ -->
-  <section class="contact-section" id="contact">
-    <div class="container">
-      <h2 class="section-title text-center fade-up">Nous Contacter</h2>
-      
-      <!-- Formulaire de réclamation -->
-      <div class="row justify-content-center fade-up stagger-1">
-        <div class="col-lg-6 col-md-8">
-          <div class="contact-form-wrapper">
-            <form id="reclamationForm" class="contact-form">
-              <div class="form-group">
-                <label for="nom" class="form-label">Nom (facultatif)</label>
-                <input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom">
+<!-- ══════════════════════════════
+     CONTACT SECTION
+══════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2 class="section-title text-center fade-up">Nous Contacter</h2>
+
+    <div class="row justify-content-center fade-up stagger-1">
+      <div class="col-lg-6 col-md-8">
+        <div class="contact-glass">
+          <div class="contact-header">
+            <div class="contact-icon-ring">✉️</div>
+            <h3>Envoyez-nous un message</h3>
+            <p>Une question ou une réclamation ? On vous répond rapidement.</p>
+          </div>
+
+          <form id="contactForm">
+            <div class="cfield-group">
+              <label class="cfield-label">Nom (facultatif)</label>
+              <div class="cfield-wrap">
+                <span class="cfield-ico"><i class="bi bi-person"></i></span>
+                <input type="text" id="c_nom" placeholder="Votre nom..." autocomplete="name"/>
               </div>
-              <div class="form-group">
-                <label for="reclamation" class="form-label">Réclamation <span class="text-danger">*</span></label>
-                <textarea id="reclamation" name="reclamation" class="form-control" rows="4" placeholder="Décrivez votre réclamation..." required></textarea>
+            </div>
+
+            <div class="cfield-group">
+              <label class="cfield-label">Sujet <span class="req">*</span></label>
+              <div class="cfield-wrap">
+                <span class="cfield-ico"><i class="bi bi-tag"></i></span>
+                <input type="text" id="c_sujet" placeholder="Ex: Qualité du service, commande..." required/>
               </div>
-              <button type="submit" class="btn-submit">
-                <i class="bi bi-whatsapp"></i> Envoyer via WhatsApp
+            </div>
+
+            <div class="cfield-group">
+              <label class="cfield-label">Message <span class="req">*</span></label>
+              <div class="cfield-wrap cfield-wrap--textarea">
+                <textarea id="c_message" rows="4" placeholder="Décrivez votre message en détail..." required></textarea>
+              </div>
+            </div>
+
+            <div id="c_toast" class="c-toast" style="display:none;"></div>
+
+            <div class="c-send-row">
+              <button type="submit" class="btn-cemail" id="btn_contact">
+                <i class="bi bi-send-fill"></i> Contacter
               </button>
-            </form>
+            </div>
+          </form>
+
+          <div class="c-divider">
+            <span class="c-divider-line"></span>
+            <span class="c-divider-text">ou contactez-nous</span>
+            <span class="c-divider-line"></span>
+          </div>
+
+          <div class="c-info-strip">
+            <div class="c-info-chip">
+              <i class="bi bi-telephone-fill"></i>
+              <a href="tel:90712800">90 712 800</a>
+            </div>
+            <div class="c-info-chip">
+              <i class="bi bi-envelope-fill"></i>
+              <span>contact@palais-solid.com</span>
+            </div>
+          </div>
+
+          <div class="c-social-row">
+            <a class="c-soc-btn" href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a class="c-soc-btn" href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="c-soc-btn" href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
           </div>
         </div>
       </div>
-
-      <!-- Informations de contact et réseaux sociaux -->
-      <div class="contact-info-bar fade-up stagger-2">
-        <div class="contact-info-item">
-          <i class="bi bi-envelope-fill"></i>
-          <span>contact@palai-solid.com</span>
-        </div>
-        <div class="contact-info-item">
-          <i class="bi bi-telephone-fill"></i>
-          <a href="tel:90712800">90712800</a>
-        </div>
-        <div class="contact-social-links">
-          <a href="https://facebook.com" class="contact-social-link" target="_blank" aria-label="Facebook">
-            <i class="bi bi-facebook"></i>
-          </a>
-          <a href="https://instagram.com" class="contact-social-link" target="_blank" aria-label="Instagram">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a href="https://tiktok.com" class="contact-social-link" target="_blank" aria-label="TikTok">
-            <i class="bi bi-tiktok"></i>
-          </a>
-        </div>
-      </div>
     </div>
-  </section>
-
-
+  </div>
+</section>
  
 
   <!-- ══════════════════════════════
@@ -1093,7 +1117,7 @@
     </div>
   </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="index.js"></script>

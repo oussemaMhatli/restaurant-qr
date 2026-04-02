@@ -66,4 +66,62 @@
       window.open(whatsappUrl, '_blank');
     });
   }
+// ── EmailJS Init ──────────────────────────────────────────
+// Replace these 3 values after setting up emailjs.com
+const EMAILJS_PUBLIC_KEY  = 'ZvYx4jqj6vyGuJlAS';   // from Account > API Keys
+const EMAILJS_SERVICE_ID  = 'service_qlb07oq';   // from Email Services
+const EMAILJS_TEMPLATE_ID = 'template_11chmru';  // from Email Templates
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+// ── Contact Form ───────────────────────────────────────────
+const contactForm = document.getElementById('contactForm');
+const toast       = document.getElementById('c_toast');
+
+function showToast(msg, type) {
+  toast.textContent = msg;
+  toast.className   = 'c-toast ' + type;
+  toast.style.display = 'block';
+  setTimeout(() => { toast.style.display = 'none'; }, 5000);
+}
+
+if (contactForm) {
+  // Email send
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nom     = (document.getElementById('c_nom').value.trim()    || 'Anonyme');
+    const sujet   = document.getElementById('c_sujet').value.trim();
+    const message = document.getElementById('c_message').value.trim();
+
+    if (!sujet || !message) {
+      showToast('Veuillez remplir le sujet et le message.', 'error');
+      return;
+    }
+
+    const btn = document.getElementById('btn_contact');
+    btn.disabled   = true;
+    btn.innerHTML  = '<i class="bi bi-hourglass-split"></i> Envoi...';
+
+    const now     = new Date();
+    const dateStr = now.toLocaleDateString('fr-FR', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      to_email:  'chaymamhatli9@gmail.com',
+      from_name: nom,
+      subject:   sujet,
+      message:   message,
+      date:      dateStr,
+    }).then(() => {
+      showToast('✓ Message envoyé avec succès ! Nous vous répondrons bientôt.', 'success');
+      contactForm.reset();
+      btn.disabled  = false;
+      btn.innerHTML = '<i class="bi bi-send-fill"></i> Contacter';
+    }).catch(() => {
+      showToast('Erreur d\'envoi.', 'error');
+      btn.disabled  = false;
+      btn.innerHTML = '<i class="bi bi-send-fill"></i> Contacter';
+    });
+  });
+}
 })();
