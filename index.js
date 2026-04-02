@@ -86,17 +86,18 @@ function showToast(msg, type) {
 }
 
 if (contactForm) {
-  // Email send
-  contactForm.addEventListener('submit', function(e) {
+  // Utiliser onsubmit pour une meilleure compatibilité
+  contactForm.onsubmit = function(e) {
     e.preventDefault();
-
+    e.stopPropagation();
+    
     const nom     = (document.getElementById('c_nom').value.trim()    || 'Anonyme');
     const sujet   = document.getElementById('c_sujet').value.trim();
     const message = document.getElementById('c_message').value.trim();
 
     if (!sujet || !message) {
       showToast('Veuillez remplir le sujet et le message.', 'error');
-      return;
+      return false;
     }
 
     const btn = document.getElementById('btn_contact');
@@ -117,11 +118,14 @@ if (contactForm) {
       contactForm.reset();
       btn.disabled  = false;
       btn.innerHTML = '<i class="bi bi-send-fill"></i> Contacter';
-    }).catch(() => {
+    }).catch((err) => {
+      console.error('EmailJS error:', err);
       showToast('Erreur d\'envoi.', 'error');
       btn.disabled  = false;
       btn.innerHTML = '<i class="bi bi-send-fill"></i> Contacter';
     });
-  });
+    
+    return false;
+  };
 }
 })();
