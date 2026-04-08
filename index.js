@@ -143,46 +143,51 @@
      CART MODAL
   ══════════════════════════════════════════ */
   function refreshCartModal() {
-    const body = document.getElementById('cartModalBody');
-    const footer = document.getElementById('cartModalFooter');
-    if (!body) return;
+    const cartItems = document.getElementById('cartItems');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const cartTotalSection = document.getElementById('cartTotalSection');
+    const orderForm = document.getElementById('orderForm');
+    const cartTotal = document.getElementById('cartTotal');
+
+    if (!cartItems || !cartEmpty) return;
 
     if (cart.length === 0) {
-      body.innerHTML = `
-        <div class="cart-empty">
-          <div class="cart-empty-icon">🛒</div>
-          <p>Votre panier est vide</p>
-          <span>Ajoutez des articles depuis le menu</span>
-        </div>`;
-      if (footer) footer.style.display = 'none';
+      cartItems.classList.remove('has-items');
+      cartItems.innerHTML = '';
+      cartEmpty.style.display = 'block';
+      if (cartTotalSection) cartTotalSection.style.display = 'none';
+      if (orderForm) orderForm.style.display = 'none';
       return;
     }
 
-    if (footer) footer.style.display = 'block';
+    // Hide empty message and show items/total/form
+    cartEmpty.style.display = 'none';
+    cartItems.classList.add('has-items');
+    if (cartTotalSection) cartTotalSection.style.display = 'block';
+    if (orderForm) orderForm.style.display = 'block';
 
-    let html = '<div class="cart-items">';
+    // Render cart items
+    let html = '';
     cart.forEach(item => {
       const subtotal = (item.price * item.qty).toFixed(3);
       html += `
         <div class="cart-item">
           <div class="cart-item-info">
             <div class="cart-item-name">${item.name}</div>
-            <div class="cart-item-unit">${item.price.toFixed(3)} TND × ${item.qty}</div>
+            <div class="cart-item-price">${item.price.toFixed(3)} TND × ${item.qty}</div>
           </div>
-          <div class="cart-item-controls">
-            <button class="cart-qty-btn" onclick="window.changeCartQty('${item.name}', -1)"><i class="bi bi-dash"></i></button>
-            <span class="cart-qty-num">${item.qty}</span>
-            <button class="cart-qty-btn" onclick="window.changeCartQty('${item.name}', 1)"><i class="bi bi-plus"></i></button>
-            <button class="cart-remove-btn" onclick="window.removeCartItem('${item.name}')"><i class="bi bi-trash3"></i></button>
+          <div class="cart-item-qty">
+            <button class="btn-qty" onclick="window.changeCartQty('${item.name}', -1)"><i class="bi bi-dash"></i></button>
+            <span>${item.qty}</span>
+            <button class="btn-qty" onclick="window.changeCartQty('${item.name}', 1)"><i class="bi bi-plus"></i></button>
           </div>
-          <div class="cart-item-subtotal">${subtotal} TND</div>
+          <button class="btn-remove" onclick="window.removeCartItem('${item.name}')"><i class="bi bi-trash"></i></button>
         </div>`;
     });
-    html += '</div>';
-    body.innerHTML = html;
+    cartItems.innerHTML = html;
 
-    const totalEl = document.getElementById('cartTotal');
-    if (totalEl) totalEl.textContent = getCartTotal().toFixed(3) + ' TND';
+    // Update total
+    if (cartTotal) cartTotal.textContent = getCartTotal().toFixed(3) + ' TND';
   }
 
   window.changeCartQty = function (name, delta) { changeQty(name, delta); };
@@ -241,36 +246,40 @@
   /* ══════════════════════════════════════════
      PASS ORDER (Cart → Orders sheet)
   ══════════════════════════════════════════ */
-  window.passOrder = function () {
-    if (cart.length === 0) return;
+  const orderForm = document.getElementById('orderForm');
+  if (orderForm) {
+    orderForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (cart.length === 0) return;
 
-    const tableInput = document.getElementById('orderTableInput');
-    const table = tableInput ? tableInput.value.trim() : '';
+      const table = document.getElementById('orderTable')?.value.trim() || 'Non précisée';
 
-    const btn = document.getElementById('btnPassOrder');
-    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Envoi...'; }
+      const btn = orderForm.querySelector('.btn-order');
+      if (btn) { btn.disabled = true; btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Envoi...'; }
 
-    const itemsStr = cart.map(i => `${i.name} x${i.qty}`).join(', ');
-    const total = getCartTotal().toFixed(3);
+      const itemsStr = cart.map(i => `${i.name} x${i.qty}`).join(', ');
+      const total = getCartTotal().toFixed(3);
 
-    sendToSheet('Orders', {
-      table:  table || 'Non précisée',
-      items:  itemsStr,
-      total:  total + ' TND',
-      status: 'Pending'
-    }).then(() => {
-      showCartToast('✓ Commande envoyée !');
-      cart = [];
-      updateCartBadge();
-      updateAddButtons();
-      refreshCartModal();
-      if (btn) { btn.disabled = false; btn.innerHTML = '<i class="bi bi-send-fill"></i> Passer la commande'; }
-      setTimeout(() => window.closeCartModal(), 1500);
-    }).catch(() => {
-      if (btn) { btn.disabled = false; btn.innerHTML = '<i class="bi bi-send-fill"></i> Passer la commande'; }
-      showCartToast('Erreur réseau. Réessayez.');
+      sendToSheet('Orders', {
+        table:  table,
+        items:  itemsStr,
+        total:  total + ' TND'
+      }).then(() => {
+        showCartToast('✓ Commande passée avec succès ! Nos serveurs vous consulteront.');
+        cart = [];
+        updateCartBadge();
+        updateAddButtons();
+        orderForm.reset();
+        if (btn) { btn.disabled = false; btn.innerHTML = '<i class="bi bi-check-circle"></i> Confirmer la Commande'; }
+        // Close modal immediately and redirect without showing empty cart
+        window.closeCartModal();
+        window.location.href = '#accueil';
+      }).catch(() => {
+        if (btn) { btn.disabled = false; btn.innerHTML = '<i class="bi bi-check-circle"></i> Confirmer la Commande'; }
+        showCartToast('Erreur réseau. Réessayez.');
+      });
     });
-  };
+  }
 
   /* ══════════════════════════════════════════
      RESERVATION MODAL

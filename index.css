@@ -507,7 +507,7 @@ body {
   border: 1px solid rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
-  max-height: 320px;
+  height: 360px;
 }
 
 .food-card:hover {
@@ -684,6 +684,16 @@ body {
   transform: rotate(90deg) scale(1.15) !important;
   box-shadow: 0 6px 20px rgba(245,166,35,0.5);
   color: #fff;
+}
+
+.btn-add.in-cart {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  box-shadow: 0 4px 12px rgba(40,167,69,0.35);
+}
+
+.btn-add.in-cart:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 6px 20px rgba(40,167,69,0.5);
 }
 
 /* ══════════════════════════════
@@ -1953,4 +1963,198 @@ body {
   .btn-cart {
     font-size: 1.3rem;
   }
+}
+
+
+:root {
+  --text-light: #ffffff;
+  --text-muted: #cfcfcf;
+  --gold: #f5a623;
+  --gold-dark: #d48b1f;
+}
+
+/* ══════════════════════════════
+   CART MODAL
+══════════════════════════════ */
+
+.cart-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cart-modal.active {
+  display: flex;
+}
+
+/* ── CONTENT ── */
+.cart-modal-content {
+  width: 100%;
+  max-width: 520px;
+  background: linear-gradient(135deg, #1a3320, #0d1f0d);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+  animation: cartFadeIn 0.4s ease;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+@keyframes cartFadeIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── HEADER ── */
+.cart-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.cart-modal-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-modal-close {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart-modal-close:hover {
+  background: rgba(245,166,35,0.25);
+  color: var(--gold);
+}
+
+/* ── BODY ── */
+.cart-modal-body {
+  padding: 1.5rem;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+/* ── EMPTY ── */
+.cart-empty {
+  text-align: center;
+  color: #d6d6d6;
+  padding: 2rem 0;
+}
+
+.cart-empty i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--gold);
+}
+
+/* ── ITEMS ── */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.7rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.cart-item-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.cart-item-price {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* ── TOTAL ── */
+.cart-total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255,255,255,0.15);
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ── FORM ── */
+.order-form {
+  margin-top: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 11px 13px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #bbbbbb;
+}
+
+.form-group input:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.12);
+}
+
+/* ── BUTTON ── */
+.btn-order {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 13px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(245,166,35,0.4);
 }
