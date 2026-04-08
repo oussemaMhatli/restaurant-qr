@@ -10,7 +10,7 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="index.css?v=2"/>
+  <link rel="stylesheet" href="index.css?v=3"/>
 
 
 </head>
@@ -70,7 +70,7 @@
           </p>
           <div class="d-flex flex-wrap gap-3 fade-up stagger-2">
             <a href="#menu" class="btn-gold"><i class="bi bi-book me-1"></i> Menu</a>
-            <a href="tel:90712800" class="btn-gold-outline"><i class="bi bi-calendar-check me-1"></i> Réserver Table</a>
+            <button type="button" class="btn-gold-outline" onclick="openReservationModal()"><i class="bi bi-calendar-check me-1"></i> Réserver Table</button>
           </div>
         </div>
         <div class="col-lg-6 hero-food-img text-center fade-up stagger-2">
@@ -1121,6 +1121,168 @@
   </section>
 
   <!-- ══════════════════════════════
+       RESERVATION MODAL
+  ══════════════════════════════ -->
+  <div id="reservationModal" class="r-modal">
+    <div class="r-modal-content">
+      <div class="r-modal-header">
+        <h3><i class="bi bi-calendar-check"></i> Réserver une Table</h3>
+        <button type="button" class="r-modal-close" onclick="closeReservationModal()">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="r-modal-body">
+        <form id="reservationForm">
+          <div class="row g-3">
+            <!-- Nom -->
+            <div class="col-md-6">
+              <div class="r-field-group">
+                <label class="r-field-label">Nom complet <span class="r-req">*</span></label>
+                <div class="r-field-wrap">
+                  <span class="r-field-icon"><i class="bi bi-person"></i></span>
+                  <input type="text" id="r_nom" placeholder="Votre nom..." required/>
+                </div>
+              </div>
+            </div>
+            <!-- Téléphone -->
+            <div class="col-md-6">
+              <div class="r-field-group">
+                <label class="r-field-label">Téléphone <span class="r-req">*</span></label>
+                <div class="r-field-wrap">
+                  <span class="r-field-icon"><i class="bi bi-telephone"></i></span>
+                  <input type="tel" id="r_phone" placeholder="Ex: 90 712 800" required/>
+                </div>
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="col-md-6">
+              <div class="r-field-group">
+                <label class="r-field-label">Email</label>
+                <div class="r-field-wrap">
+                  <span class="r-field-icon"><i class="bi bi-envelope"></i></span>
+                  <input type="email" id="r_email" placeholder="votre@email.com"/>
+                </div>
+              </div>
+            </div>
+            <!-- Nombre de personnes -->
+            <div class="col-md-6">
+              <div class="r-field-group">
+                <label class="r-field-label">Nombre de personnes <span class="r-req">*</span></label>
+                <div class="r-field-wrap">
+                  <span class="r-field-icon"><i class="bi bi-people"></i></span>
+                  <select id="r_guests" required>
+                    <option value="">Choisir...</option>
+                    <option value="1">1 personne</option>
+                    <option value="2">2 personnes</option>
+                    <option value="3">3 personnes</option>
+                    <option value="4">4 personnes</option>
+                    <option value="5">5 personnes</option>
+                    <option value="6">6 personnes</option>
+                    <option value="7">7 personnes</option>
+                    <option value="8">8+ personnes</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Date -->
+            <div class="col-md-6">
+              <div class="r-field-group">
+                <label class="r-field-label">Date <span class="r-req">*</span></label>
+                <div class="r-field-wrap">
+                  <span class="r-field-icon"><i class="bi bi-calendar"></i></span>
+                  <input type="date" id="r_date" required/>
+                </div>
+              </div>
+            </div>
+            <!-- Heure -->
+            <div class="col-md-6">
+              <div class="r-field-group">
+                <label class="r-field-label">Heure <span class="r-req">*</span></label>
+                <div class="r-field-wrap">
+                  <span class="r-field-icon"><i class="bi bi-clock"></i></span>
+                  <select id="r_time" required>
+                    <option value="">Choisir...</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                    <option value="21:00">21:00</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Message -->
+            <div class="col-12">
+              <div class="r-field-group">
+                <label class="r-field-label">Message (optionnel)</label>
+                <div class="r-field-wrap r-field-wrap--textarea">
+                  <textarea id="r_message" rows="3" placeholder="Demandes spéciales, allergies, occasion..."></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="r_toast" class="r-toast" style="display:none;"></div>
+          <div class="r-send-row">
+            <button type="submit" class="btn-rsend" id="btn_reserver">
+              <i class="bi bi-send-fill"></i> Envoyer la Réservation
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- ══════════════════════════════
+     CART MODAL
+     Paste this just before </body>
+══════════════════════════════ -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-modal-content">
+
+    <div class="cart-modal-header">
+      <h3><i class="bi bi-cart3"></i> Votre Panier</h3>
+      <button type="button" class="cart-modal-close" onclick="closeCartModal()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <div class="cart-modal-body" id="cartModalBody">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <p>Votre panier est vide</p>
+        <span>Ajoutez des articles depuis le menu</span>
+      </div>
+    </div>
+
+    <div class="cart-modal-footer" id="cartModalFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-amount" id="cartTotal">0.000 TND</span>
+      </div>
+
+      <div class="cart-table-group">
+        <label class="cart-table-label">Numéro de table (optionnel)</label>
+        <div class="cart-table-wrap">
+          <span class="cart-table-ico"><i class="bi bi-grid-3x3"></i></span>
+          <input type="text" id="orderTableInput" placeholder="Ex: Table 5, Terrasse..."/>
+        </div>
+      </div>
+
+      <button class="btn-pass-order" id="btnPassOrder" onclick="passOrder()">
+        <i class="bi bi-send-fill"></i> Passer la commande
+      </button>
+    </div>
+
+  </div>
+</div>
+  <!-- ══════════════════════════════
        FOOTER
   ══════════════════════════════ -->
   <footer class="foody-footer">
@@ -1132,6 +1294,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="index.js?v=2"></script>
+  <script src="index.js?v=6"></script>
 </body>
 </html>
